@@ -1,0 +1,21 @@
+.dashboard_icon {
+    width: 32px;
+    height: 32px;
+    background-color: #3F51B5;
+    border-radius: 50%;
+    position: relative;
+}
+
+.d_shape {
+    position: absolute;
+    left: 34.38%;
+    right: 28.12%;
+    top: 28.12%;
+    bottom: 28.12%;
+    background: linear-gradient(143.7deg, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 100%);
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    background-color: #1A202E !important;
+
+}
