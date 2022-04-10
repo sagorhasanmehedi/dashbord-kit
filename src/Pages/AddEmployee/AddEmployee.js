@@ -73,7 +73,7 @@ const AddEmployee = () => {
   };
 
   // get date
-  const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
+  const [setValue] = React.useState(new Date("2014-08-18T21:11:54"));
   const setStartDate = (newValue) => {
     setValue(newValue);
   };
@@ -270,8 +270,6 @@ const AddEmployee = () => {
           />{" "}
         </Grid>
         <Grid item xs={12} md={6}>
-        
-
           <CssTextField
             type="date"
             variant="outlined"

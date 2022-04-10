@@ -5,7 +5,6 @@ import {
   FormControl,
   Grid,
   Input,
-  TextareaAutosize,
   TextField,
   Typography,
 } from "@mui/material";
@@ -74,12 +73,10 @@ const AddEmployee = () => {
   };
 
   // get date
-  const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
+  const [setValue] = React.useState(new Date("2014-08-18T21:11:54"));
   const setStartDate = (newValue) => {
     setValue(newValue);
   };
-
-
 
   return (
     <Box
@@ -273,8 +270,7 @@ const AddEmployee = () => {
           />{" "}
         </Grid>
         <Grid item xs={12} md={6}>
-
-        <CssTextField
+          <CssTextField
             type="date"
             variant="outlined"
             name="startDate"
@@ -287,12 +283,6 @@ const AddEmployee = () => {
             }}
             InputProps={{ style: { color: "#A4A6B3" } }}
           />
-
-
-
-
-  
-          
         </Grid>
         <Grid item xs={12}>
           <CssTextField
