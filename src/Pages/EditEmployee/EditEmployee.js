@@ -17,6 +17,7 @@ import { styled } from "@mui/material/styles";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import SubNav from "../../Components/SubNav/SubNav";
 
 const AddEmployee = () => {
   // TextField style
@@ -84,43 +85,7 @@ const AddEmployee = () => {
       className="home-main-bg"
     >
       {/* Heading Start */}
-      <Box
-        sx={{
-          mb: 4,
-          color: "#A4A6B3",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Typography variant="h6">Add Employee</Typography>
-        <Box
-          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-        >
-          <Link to="/addprojects">
-            <AddBoxIcon sx={{ color: "A4A6B3" }} />
-          </Link>
-          <Link to="/home">
-            <HomeIcon sx={{ mx: 1 }} />
-          </Link>
-          <ArrowForwardIosIcon sx={{ fontSize: "12px ", mx: 1 }} />
-          <Typography
-            variant="body1"
-            sx={{ mx: 1, color: "#A4A6B3", fontSize: "14px" }}
-          >
-            {" "}
-            Projects
-          </Typography>
-          <ArrowForwardIosIcon sx={{ fontSize: "12px ", mx: 1 }} />
-          <Typography
-            variant="body1"
-            sx={{ color: "#A4A6B3", fontSize: "14px" }}
-          >
-            Add Projects
-          </Typography>
-        </Box>
-      </Box>
+      <SubNav content={"Edit Employee"} />
       {/* Heading end */}
 
       {/* TextField start */}

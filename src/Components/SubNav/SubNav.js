@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { SubTitle } from "../../MuStyled/MuStyled";
 import React from "react";
 
-const SubNav = () => {
+const SubNav = ({ content }) => {
   return (
     <Box
       sx={{
@@ -14,7 +14,7 @@ const SubNav = () => {
         marginBottom: "30px",
       }}
     >
-      <SubTitle>Employees</SubTitle>
+      <SubTitle>{content}</SubTitle>
       <Box>
         <AddBoxIcon sx={{ color: "A4A6B3" }} />
         <HomeIcon sx={{ mx: 1, marginLeft: "19px" }} />

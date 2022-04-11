@@ -8,6 +8,13 @@ import AddEmployee from "./Pages/AddEmployee/AddEmployee";
 import EditEmployee from "./Pages/EditEmployee/EditEmployee";
 import Employees from "./Pages/Employees/Employees";
 import EditProject from "./Pages/EditProject/EditProject";
+import ProjectsDetails from "./Pages/ProjectsDetails/ProjectsDetails";
+import EmployeeProfile from "./Pages/EmployeeProfile/EmployeeProfile";
+import AddCilent from "./Pages/AddCilent/AddCilent";
+import EditClient from "./Pages/EditClient/EditClient";
+import EmployeeProfileSetting from "./Pages/EmployeeProfileSetting/EmployeeProfileSetting";
+import ClientProfile from "./Pages/ClientProfile/ClientProfile";
+import ClientProfileSetting from "./Pages/ClientProfileSetting/ClientProfileSetting";
 
 function App() {
   return (
@@ -16,12 +23,25 @@ function App() {
         <Route path="/" element={<Layout></Layout>}>
           <Route path="/home" element={<Home />} />
           <Route path="/addprojects" element={<AddProjects />} />
+          <Route path="/editproject" element={<EditProject />} />
+          <Route path="/projectdetails" element={<ProjectsDetails />} />
           {/* <Route path="/editproject" element={<EditProjects />} /> */}
-          <Route path="/home" element={<Home />} />
+          <Route path="/employees" element={<Employees />} />
           <Route path="/addEmployee" element={<AddEmployee />} />
           <Route path="/editemploy" element={<EditEmployee />} />
-          <Route path="/employees" element={<Employees />} />
-          <Route path="/editproject" element={<EditProject />} />
+          <Route path="/editemploy" element={<EditEmployee />} />
+          <Route path="/employeeprofile" element={<EmployeeProfile />} />
+          <Route
+            path="/employeeprofilesetting"
+            element={<EmployeeProfileSetting />}
+          />
+          <Route path="/addcilent" element={<AddCilent />} />
+          <Route path="/editclient" element={<EditClient />} />
+          <Route path="/clientprofile" element={<ClientProfile />} />
+          <Route
+            path="/clientprofilesetting"
+            element={<ClientProfileSetting />}
+          />
         </Route>
       </Routes>
     </div>

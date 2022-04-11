@@ -71,4 +71,19 @@ export const DiscriptionTitle = styled(Typography)(({ theme }) => ({
   letterSpacing: "0.17px",
   textAlign: "left",
   margin: "30px 0",
+  color: "#A4A6B3",
 }));
+
+export const CelectButtonStyle = styled(Button)({
+  border: "2px solid #3F51B5",
+  color: "#FBFBFB",
+  backgroundColor: "#3F51B5",
+  padding: "0px 10px",
+  borderRadius: "8px",
+  fontSize: "14px",
+  fontWeight: "700",
+  display: "flex",
+  alignContent: "flex-start",
+  textTransform: "capitalize",
+  hight: "27px",
+});

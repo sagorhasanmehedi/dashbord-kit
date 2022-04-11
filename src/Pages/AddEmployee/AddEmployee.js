@@ -13,10 +13,10 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import HomeIcon from "@mui/icons-material/Home";
 import { styled } from "@mui/material/styles";
-import "./AddEmployee.css";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import { CelectButtonStyle } from "../../MuStyled/MuStyled";
 
 const AddEmployee = () => {
   // TextField style
@@ -40,23 +40,7 @@ const AddEmployee = () => {
     },
   });
 
-  // uplode button style
-  const ButtonStyled = styled(Button)({});
-
   // select button style
-  const CelectButtonStyle = styled(Button)({
-    border: "2px solid #3F51B5",
-    color: "#FBFBFB",
-    backgroundColor: "#3F51B5",
-    padding: "0px 10px",
-    borderRadius: "8px",
-    fontSize: "14px",
-    fontWeight: "700",
-    display: "flex",
-    alignContent: "flex-start",
-    textTransform: "capitalize",
-    hight: "27px",
-  });
 
   // get gender
   const [age, setAge] = React.useState("");
@@ -98,7 +82,7 @@ const AddEmployee = () => {
         <Box
           sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
         >
-          <Link to="/addprojects">
+          <Link to="/editemploy">
             <AddBoxIcon sx={{ color: "A4A6B3" }} />
           </Link>
           <Link to="/home">
@@ -414,7 +398,7 @@ const AddEmployee = () => {
       </div>
 
       <Box sx={{ display: "flex", gap: "20px", marginTop: "23px" }}>
-        <ButtonStyled
+        <Button
           sx={{
             borderRadius: "8px",
             backgroundColor: "#7480FF",
@@ -424,7 +408,7 @@ const AddEmployee = () => {
           variant="contained"
         >
           Submit
-        </ButtonStyled>
+        </Button>
         <Button
           sx={{
             borderRadius: "8px",

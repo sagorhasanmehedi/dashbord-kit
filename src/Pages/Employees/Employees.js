@@ -17,7 +17,7 @@ const Employees = () => {
     <Box
       sx={{ backgroundColor: "#1A202E", padding: "30px", borderRadius: "15px" }}
     >
-      <SubNav />
+      <SubNav content={"Employees"} />
 
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 6 }}>
         {Employees.map((Empl, index) => (
