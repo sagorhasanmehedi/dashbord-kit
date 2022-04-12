@@ -1,60 +1,117 @@
-import {
-  Button,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import SubNav from "../../Components/SubNav/SubNav";
 import { DiscriptionTitle, TextFieldStyle } from "../../MuStyled/MuStyled";
 
 const EditProject = () => {
-  // get depertment
-  const [Department, setdepartment] = React.useState("");
-  const handleDapertmentChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get price
-  const [Price, setPrice] = React.useState("");
-  const handlePriceChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get Team Leader
-  const [TeamLeader, setTeamLeader] = React.useState("");
-  const handleTeamLeaderChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get Team Member
-  const [TeamMember, setTeamMember] = React.useState("");
-  const handleTeamMemberChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get Category
-  const [Category, setCategory] = React.useState("");
-  const handleCategoryChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get Project Priority
-  const [ProjectPriority, setProjectPriorit] = React.useState("");
-  const handleProjectPriorityChange = (event) => {
-    setdepartment(event.target.value);
-  };
-  // get Phases
-  const [Phases, setPhases] = React.useState("");
-  const handlePhasesChange = (event) => {
-    setdepartment(event.target.value);
-  };
+  const [Data, setData] = useState([]);
 
+  // department field
+  const Department = [
+    {
+      value: "web",
+      label: "Web",
+    },
+    {
+      value: "flutter",
+      label: "Flutter",
+    },
+    {
+      value: "software",
+      label: "Software",
+    },
+  ];
+
+  // Team Leader
+  const TeamLeader = [
+    {
+      value: "A",
+      label: "A",
+    },
+    {
+      value: "B",
+      label: "B",
+    },
+    {
+      value: "C",
+      label: "C",
+    },
+  ];
+  // Team Member
+
+  const TeamMember = [
+    {
+      value: "C",
+      label: "C",
+    },
+    {
+      value: "D",
+      label: "D",
+    },
+    {
+      value: "F",
+      label: "F",
+    },
+  ];
+
+  // Category
+  const Category = [
+    {
+      value: "Application Software",
+      label: "Application Software",
+    },
+    {
+      value: "System Software",
+      label: "System Software",
+    },
+    {
+      value: "Programming Software",
+      label: "Programming Software",
+    },
+  ];
+
+  // Phases
+  const Phases = [
+    {
+      value: "D",
+      label: "D",
+    },
+    {
+      value: "E",
+      label: "E",
+    },
+    {
+      value: "F",
+      label: "F",
+    },
+  ];
+  // priority
+  const priority = [
+    {
+      value: "low",
+      label: "Low",
+    },
+    {
+      value: "medium",
+      label: "Medium",
+    },
+    {
+      value: "high",
+      label: "High",
+    },
+  ];
+  // stor data
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Data", Data);
+  };
   return (
     <Box
       sx={{ backgroundColor: "#1A202E", borderRadius: "15px", padding: "32px" }}
     >
       <SubNav content={"Edit Project"} />
-      <Box component="form">
+      <Box component="form" onSubmit={handleSubmit}>
         <Grid
           container
           spacing={2}
@@ -69,180 +126,192 @@ const EditProject = () => {
               fullWidth
             />
           </Grid>
+
           <Grid item md={6} xs={12}>
-            <FormControl
-              sx={{
-                width: "100%",
-              }}
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              required
+              select
+              SelectProps={{ native: true }}
+              label="Department*"
+              name="Project Priority"
+              fullidth
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
             >
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Select Department*
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handleDapertmentChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+              {Department.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
           </Grid>
+
           <Grid item md={6} xs={12}>
-            {" "}
             <TextFieldStyle label="Client*" fullWidth />
           </Grid>
+
           <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%", height: "50px", m: 0 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Price*
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handlePriceChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+            <TextFieldStyle label="Price*" name="Price" fullWidth />
           </Grid>
+
           <Grid item md={6} xs={12}>
-            {" "}
             <TextFieldStyle
               type="date"
-              variant="outlined"
-              name="startDate"
-              label="Project Start Date*"
               fullWidth
+              label="Start Date"
+              name="startDate"
+              focused
               InputLabelProps={{
                 sx: {
                   color: "#A4A6B3",
                 },
               }}
               InputProps={{ style: { color: "#A4A6B3" } }}
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
             />
           </Grid>
           <Grid item md={6} xs={12}>
-            {" "}
-            <TextFieldStyle type="date" label="Project End Date*" fullWidth />
+            <TextFieldStyle
+              type="date"
+              focused
+              label="End Date*"
+              name="End Date"
+              fullWidth
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            />
+          </Grid>
+
+          <Grid xs={12} sm={6} item>
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              label="Team Leader"
+              name="Team Leader"
+              required
+              select
+              SelectProps={{ native: true }}
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            >
+              {TeamLeader.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
+          </Grid>
+          <Grid xs={12} sm={6} item>
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              label="Team Member"
+              name="Team Member"
+              required
+              select
+              SelectProps={{ native: true }}
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            >
+              {TeamMember.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
+          </Grid>
+          <Grid xs={12} sm={6} item>
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              label="Category"
+              name="Category"
+              required
+              select
+              SelectProps={{ native: true }}
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            >
+              {Category.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
           </Grid>
           <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%", height: "50px", m: 0 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Team Leader
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handleTeamLeaderChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              required
+              select
+              SelectProps={{ native: true }}
+              label="Project Priority"
+              name="Project Priority"
+              fullidth
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            >
+              {priority.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
           </Grid>
-          <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%" }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Team Member
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handleTeamMemberChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%", height: "50px", m: 0 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Category*
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handleCategoryChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%", height: "50px", m: 0 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Project Priority
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handleProjectPriorityChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <FormControl sx={{ width: "100%", height: "50px", m: 0 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Phases*
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={Department}
-                onChange={handlePhasesChange}
-                label="Age"
-              >
-                <MenuItem value={10}>software</MenuItem>
-                <MenuItem value={21}>Web development</MenuItem>
-                <MenuItem value={22}>Mobail app</MenuItem>
-                <MenuItem value="">
-                  <em>None of them</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+          <Grid xs={12} sm={6} item>
+            <TextFieldStyle
+              fullWidth
+              variant="outlined"
+              label="Phases"
+              name="Phases"
+              required
+              select
+              SelectProps={{ native: true }}
+              onChange={(e) =>
+                setData({
+                  ...Data,
+                  [e.target.name]: e.target.value,
+                })
+              }
+            >
+              {Phases.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextFieldStyle>
           </Grid>
         </Grid>
         <DiscriptionTitle>Description:</DiscriptionTitle>
@@ -251,8 +320,15 @@ const EditProject = () => {
             id="outlined-multiline-static"
             multiline
             rows={4}
-            defaultValue="Description:"
+            defaultValue="Description"
+            name="Description"
             fullWidth
+            onChange={(e) =>
+              setData({
+                ...Data,
+                [e.target.name]: e.target.value,
+              })
+            }
           />
         </Grid>
         <Box sx={{ display: "flex", alignItems: "left" }}>
@@ -263,6 +339,7 @@ const EditProject = () => {
               color: "#9FA2B4;",
               marginTop: "30px",
             }}
+            type="submit"
           >
             Save
           </Button>

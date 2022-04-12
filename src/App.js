@@ -15,6 +15,7 @@ import EditClient from "./Pages/EditClient/EditClient";
 import EmployeeProfileSetting from "./Pages/EmployeeProfileSetting/EmployeeProfileSetting";
 import ClientProfile from "./Pages/ClientProfile/ClientProfile";
 import ClientProfileSetting from "./Pages/ClientProfileSetting/ClientProfileSetting";
+import Invoice from "./Pages/Invoice/Invoice";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/addcilent" element={<AddCilent />} />
           <Route path="/editclient" element={<EditClient />} />
           <Route path="/clientprofile" element={<ClientProfile />} />
+          <Route path="/invoice" element={<Invoice />} />
           <Route
             path="/clientprofilesetting"
             element={<ClientProfileSetting />}

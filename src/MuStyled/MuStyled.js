@@ -47,14 +47,14 @@ export const TextFieldStyle = styled(TextField)(({ theme }) => ({
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      border: "1px solid #D6E4EC",
+      border: "1px solid #D6E4ECB3",
     },
 
     "&:hover fieldset": {
       border: "1px solid #D6E4ECB3",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "#D6E4EC",
+      border: "1px solid #D6E4ECB3",
     },
   },
 
@@ -86,4 +86,67 @@ export const CelectButtonStyle = styled(Button)({
   alignContent: "flex-start",
   textTransform: "capitalize",
   hight: "27px",
+});
+export const InvoiceButtonStyle = styled(Box)({
+  color: "black",
+  width: "32px",
+  hight: "32px",
+  borderRadius: "3px",
+  backgroundColor: "#3F51B5",
+
+  marginLeft: "20px",
+});
+export const InvoiceTitle = styled(Typography)({
+  color: "#1F2229",
+  lineHeight: " 9px",
+  textAlign: "left",
+  letterSpacing: "0.0016px",
+  textTransform: " uppercase",
+  fontSize: "8px",
+});
+export const Recpient = styled(Typography)({
+  fontStyle: "normal",
+  fontWeight: "700",
+  fontSize: "8px",
+  lineHeight: "13px",
+  textAlign: "left",
+  marginBottom: "1px",
+  letterSpacing: "-0.0002px",
+});
+export const Mockup = styled(Typography)({
+  fontStyle: "normal",
+  fontWeight: "700",
+  fontSize: "8px",
+  lineHeight: "13px",
+  textAlign: "right",
+  marginBottom: "1px",
+  letterSpacing: "-0.0002px",
+});
+export const NoteStyle = styled(Typography)({
+  fontStyle: "normal",
+  fontWeight: "700",
+  fontSize: "8px",
+  lineHeight: "13px",
+
+  color: "#545E60",
+});
+export const TableTitle = styled(Typography)({
+  fontSize: "12px",
+  color: "#8BC43F",
+  fontWeight: "400",
+  textAlign: "left",
+});
+export const Tablecell = styled(Typography)({
+  fontSize: "12px",
+  color: "#1F2229",
+  fontWeight: "700",
+
+  paddingBottom: "9px",
+});
+export const AcountInfo = styled(Typography)({
+  fontSize: "8px",
+  color: "#1F2229",
+  fontWeight: "700",
+  textAlign: "left",
+  margin: "5px 0",
 });

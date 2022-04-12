@@ -52,7 +52,7 @@ const Layout = (props) => {
           </Typography>
         </Box>
         <List>
-          <Link style={{ textDecoration: "none" }} to={`/home`}>
+          {/* <Link style={{ textDecoration: "none" }} to={`/home`}>
             <ListItem>
               <ListItemIcon>
                 <InboxIcon sx={{ color: "#A4A6B3" }} />
@@ -151,7 +151,7 @@ const Layout = (props) => {
                 Edit Client
               </ListItemText>
             </ListItem>
-          </Link>
+          </Link> */}
           {/* <Link
             style={{ textDecoration: "none" }}
             to={`/employeeprofilesetting`}
@@ -165,13 +165,23 @@ const Layout = (props) => {
               </ListItemText>
             </ListItem>
           </Link> */}
-          <Link style={{ textDecoration: "none" }} to={`/clientprofile`}>
+          {/* <Link style={{ textDecoration: "none" }} to={`/clientprofile`}>
             <ListItem>
               <ListItemIcon>
                 <InboxIcon sx={{ color: "#A4A6B3" }} />
               </ListItemIcon>
               <ListItemText sx={{ color: "#A4A6B3", fontSize: "16px" }}>
                 Client Profile
+              </ListItemText>
+            </ListItem>
+          </Link> */}
+          <Link style={{ textDecoration: "none" }} to={`/invoice`}>
+            <ListItem>
+              <ListItemIcon>
+                <InboxIcon sx={{ color: "#A4A6B3" }} />
+              </ListItemIcon>
+              <ListItemText sx={{ color: "#A4A6B3", fontSize: "16px" }}>
+                Invoice
               </ListItemText>
             </ListItem>
           </Link>

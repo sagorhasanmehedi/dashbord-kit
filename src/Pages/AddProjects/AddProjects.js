@@ -110,8 +110,8 @@ const AddProject = () => {
   // stor data
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(Data);
-    console.log(File);
+    console.log("Data", Data);
+    console.log("File", File);
   };
 
   return (
