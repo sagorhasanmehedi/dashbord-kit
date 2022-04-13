@@ -1,12 +1,12 @@
 import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, padding } from "@mui/system";
 import React from "react";
 import { AcountInfo, Tablecell, TableTitle } from "../../MuStyled/MuStyled";
 
 const InvoiceDicsription = () => {
   return (
     <Box sx={{ marginTop: "64px" }}>
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item xs={6}>
           <TableTitle sx={{ textAlign: "left" }}>DESCRIPTION</TableTitle>
         </Grid>
@@ -14,10 +14,10 @@ const InvoiceDicsription = () => {
           <TableTitle>HOURS</TableTitle>
         </Grid>
         <Grid item xs={2}>
-          <TableTitle>UNITS</TableTitle>
+          <TableTitle sx={{ marginLeft: "20px" }}>UNITS</TableTitle>
         </Grid>
         <Grid item xs={2}>
-          <TableTitle>AMOUNT</TableTitle>
+          <TableTitle sx={{ marginLeft: "20px" }}>AMOUNT</TableTitle>
         </Grid>
       </Grid>
       <Grid
@@ -87,7 +87,7 @@ const InvoiceDicsription = () => {
       <Grid container sx={{ marginTop: "8px" }}>
         <Grid item xs={6}></Grid>
         <Grid item xs={2}>
-          <Tablecell>TOTAL</Tablecell>
+          <Tablecell sx={{ textAlign: "left" }}>TOTAL</Tablecell>
         </Grid>
         <Grid item xs={2}>
           <Tablecell></Tablecell>
@@ -96,17 +96,31 @@ const InvoiceDicsription = () => {
           <TableTitle>1083,00 USD</TableTitle>
         </Grid>
       </Grid>
-      <Grid container sx={{ marginTop: "39px" }}>
+      <Grid container sx={{ marginTop: "30px" }}>
         <Grid md={6}></Grid>
         <Grid md={6}>
-          <Typography sx={{ fontSize: "10px", textAlign: "left" }}>
-            ACCOUNT DATA
-          </Typography>
+          <Box
+            sx={{
+              backgroundColor: "#8BC43F",
+              paddingLeft: "7px",
+              paddingTop: "2px",
+              paddingBottom: "1px",
+            }}
+          >
+            <Typography
+              sx={{ fontSize: "11px", textAlign: "left", color: "#FFFFFF" }}
+            >
+              ACCOUNT DATA
+            </Typography>
+          </Box>
 
-          <AcountInfo>
-            Transfer the amount to the business account below. Please
+          <AcountInfo sx={{ fontWeight: "700" }}>
+            Transfer the amount to the business account below.
           </AcountInfo>
-          <AcountInfo> include invoice number on your check.</AcountInfo>
+          <AcountInfo sx={{ fontWeight: "700" }}>
+            {" "}
+            include invoice number on your check.
+          </AcountInfo>
           <AcountInfo>BANK: PENTOS</AcountInfo>
           <AcountInfo>IBAN: ADSA-2343-2332-23234</AcountInfo>
         </Grid>

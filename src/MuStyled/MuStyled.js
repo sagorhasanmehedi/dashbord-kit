@@ -102,32 +102,31 @@ export const InvoiceTitle = styled(Typography)({
   textAlign: "left",
   letterSpacing: "0.0016px",
   textTransform: " uppercase",
-  fontSize: "8px",
+  fontSize: "9px",
 });
 export const Recpient = styled(Typography)({
   fontStyle: "normal",
   fontWeight: "700",
-  fontSize: "8px",
+  fontSize: "9px",
   lineHeight: "13px",
   textAlign: "left",
-  marginBottom: "1px",
   letterSpacing: "-0.0002px",
+  color: "#1F2229",
 });
 export const Mockup = styled(Typography)({
   fontStyle: "normal",
   fontWeight: "700",
-  fontSize: "8px",
+  fontSize: "9px",
   lineHeight: "13px",
   textAlign: "right",
-  marginBottom: "1px",
   letterSpacing: "-0.0002px",
+  color: "#1F2229",
 });
 export const NoteStyle = styled(Typography)({
   fontStyle: "normal",
   fontWeight: "700",
-  fontSize: "8px",
+  fontSize: "9px",
   lineHeight: "13px",
-
   color: "#545E60",
 });
 export const TableTitle = styled(Typography)({
@@ -144,9 +143,9 @@ export const Tablecell = styled(Typography)({
   paddingBottom: "9px",
 });
 export const AcountInfo = styled(Typography)({
-  fontSize: "8px",
+  fontSize: "9px",
   color: "#1F2229",
-  fontWeight: "700",
+
   textAlign: "left",
-  margin: "5px 0",
+  margin: "2px 0",
 });
